@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="parali.css"/>
+    <title>Industries Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0e1b6e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-left {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #0c1a5c;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        /* Carousel */
+        .carousel {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .carousel img {
+            height: 450px;
+            object-fit: cover;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 40px 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .accordion-button {
+            background-color: #f1f1f1;
+            color: #0e1b6e;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #0e1b6e;
+            color: white;
+        }
+
+        .accordion-body {
+            background-color: #f9f9f9;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+   <div class="navbar">
+        <div class="navbar-left">
+            <a href="industHome.html">Home</a>
+            <a href="industBazaar.html">Parali Bazar</a>
+            <a href="industOrder.html">My Orders</a>
+        </div>
+        <a href="index.html"><button type="button" class="btn btn-outline-light">Sign Out</button></a>
+    </div>
+
+    <div class="page-content container">
+        <h1 class="text-center mb-4">Welcome To Your Dashboard</h1>
+        <p class="text-center">Here you can keep track of statistics</p>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="https://cepr.org/sites/default/files/styles/og_image/public/2024-06/AdobeStock_715361963.jpeg?itok=MMinhvEp" class="d-block w-100" alt="Biomass Industry">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Empowering Industries</h5>
+                    <p>Promoting sustainable raw materials.</p>
+                </div>
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe7oTBm8O9V3a8jlYQ8D1aQc5QAcYFEgxLOLfUjSuDltYL8ouzL3grtSNSE1gGPu4a9sU&usqp=CAU" class="d-block w-100" alt="Biomass Industry">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Recycling Parali</h5>
+                    <p>Converting farm waste into useful industrial products.</p>
+                </div>
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://thelawblog.in/wp-content/uploads/2016/10/straw-bales-1155003_960_720.jpg?w=960" class="d-block w-100" alt="Stubble Burning">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Stubble Burning Issues</h5>
+                    <p>Stubble Burning - A threat to the environment</p>
+                </div>
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://t3.ftcdn.net/jpg/06/21/17/16/240_F_621171608_ZL1c3EeTwijOK17K3iUxDyKQgvq3x3aF.jpg" class="d-block w-100" alt="Farmers in Fields">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Empowering Farmers</h5>
+                    <p>Providing sustainable solutions for agricultural waste.</p>
+                </div>
+            </div>
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section fade-in">
+        <h4>Frequently Asked Questions</h4>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+                        What is the purpose of this platform?
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Our platform connects industries and government for the sale of parali as raw material and promotes sustainability.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+                        How do I get started with the platform?
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Simply sign up on our website, create an account, and start browsing through the available parali resources on the Parali Bazar page.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+                        What is our mission?
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Our mission is to bridge the gap between farmers and industries, while fostering sustainability. We aim to empower industries by offering them access to reliable raw material resources.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4">
+                        How easy is it to use our platform?
+                    </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Our platform is designed to be user-friendly. Simply sign up, browse the Parali Bazar, and connect with suppliers with ease.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

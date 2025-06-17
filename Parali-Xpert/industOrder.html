@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Orders - Parali Bazar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0e1b6e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-left {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #0c1a5c;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+       
+        .order-table th, .order-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .status-pending {
+            color: orange;
+        }
+        .status-completed {
+            color: green;
+        }
+        .status-cancelled {
+            color: red;
+        }
+
+        .page-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+        <a href="industHome.html">Home</a>
+        <a href="industBazaar.html">Parali Bazar</a>
+        <a href="industOrder.html">My Orders</a>
+    </div>
+    <a href="index.html"><button type="button" class="btn btn-outline-light">Sign Out</button></a>
+</div>
+
+<div class="page-content container">
+    <h1 class="text-center mb-4">Your Orders</h1>
+    <p class="text-center">Check all the orders here, you have made till date</p>
+</div>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered order-table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#12345</td>
+                        <td>2025-01-29</td>
+                        <td>Wheat Straw (5000kg), Rice Straw (50kg)</td>
+                        <td>₹69,150</td>
+                        <td class="status-pending">Pending</td>
+                        <td><button class="btn btn-warning btn-sm">Track Order</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12344</td>
+                        <td>2025-01-25</td>
+                        <td>Barley Straw (27000kg)</td>
+                        <td>₹9,45,800</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12343</td>
+                        <td>2025-01-20</td>
+                        <td>Maize Stalk (7800kg)</td>
+                        <td>₹30,080</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12342</td>
+                        <td>2025-01-18</td>
+                        <td>Oats Straw (1500kg)</td>
+                        <td>₹10,850</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12341</td>
+                        <td>2025-01-15</td>
+                        <td>Sugarcane Trash (2500kg)</td>
+                        <td>₹2,07,500</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12340</td>
+                        <td>2025-01-10</td>
+                        <td>Cotton Stalk (900kg)</td>
+                        <td>₹10,570</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12339</td>
+                        <td>2025-01-05</td>
+                        <td>Millet Stalk (1300kg)</td>
+                        <td>₹37,800</td>
+                        <td class="status-cancelled">Cancelled</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>#12338</td>
+                        <td>2024-12-30</td>
+                        <td>Wheat Straw (1400kg)</td>
+                        <td>₹60,900</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12337</td>
+                        <td>2024-12-25</td>
+                        <td>Rice Straw (2500kg)</td>
+                        <td>₹28,500</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12336</td>
+                        <td>2024-12-20</td>
+                        <td>Barley Straw (4000kg)</td>
+                        <td>₹39,690</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12335</td>
+                        <td>2024-12-30</td>
+                        <td>Wheat Straw (7000kg)</td>
+                        <td>₹21,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12334</td>
+                        <td>2024-12-30</td>
+                        <td>Rice Straw (1700kg)</td>
+                        <td>₹20,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12333</td>
+                        <td>2024-12-30</td>
+                        <td>Sugarcane Trash (2000kg)</td>
+                        <td>₹28,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                    <tr>
+                        <td>#12332</td>
+                        <td>2024-12-30</td>
+                        <td>Maize Straw (900kg)</td>
+                        <td>₹22,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td><button class="btn btn-success btn-sm">Download Invoice</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

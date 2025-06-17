@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="parali.css"/>
+    <title>Parali Bazar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .page-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0e1b6e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .navbar-left {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #0c1a5c;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .parali-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .parali-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .parali-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .parali-card h5 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .parali-card p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Floating Add to Cart Button */
+        .cart-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #E8F9FF;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            z-index: 200;
+        }
+
+        .cart-btn:hover {
+            background-color: #FFE8B6;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            width: 200px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="industHome.html">Home</a>
+            <a href="industBazaar.html">Parali Bazar</a>
+            <a href="industOrder.html">My Orders</a>
+        </div>
+        <a href="index.html"><button type="button" class="btn btn-outline-light">Sign Out</button></a>
+    </div>
+
+        <!-- Page Content -->
+        <div class="page-content container">
+            <h1 class="text-center mb-4">Parali Bazar</h1>
+            <p class="text-center">Explore crop residues available for sale.</p>
+    
+            <!-- Parali Types in Two Columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="parali-card">
+                        <img src="https://images.prismic.io/allplants-cms-prod/81cc59ee-0137-4099-8ec8-8dd1dae7a18f_wheat-field.jpg?auto=compress,format" alt="Wheat Straw">
+                        <h5>Wheat Straw</h5>
+                        <p>Quantity: 500 kgs</p>
+                        <p>Price: ₹10/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://www.shutterstock.com/image-photo/bundles-freshly-harvest-rice-straw-600nw-2249446485.jpg" alt="Rice Straw">
+                        <h5>Rice Straw</h5>
+                        <p>Quantity: 300 kgs</p>
+                        <p>Price: ₹8/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://www.asiafarming.com/wp-content/uploads/2023/01/Growing-Jowar-Organically-in-Maharashtra2-1024x655.jpg" alt="Rice Straw">
+                        <h5>Jowar stubble</h5>
+                        <p>Quantity: 600 kgs</p>
+                        <p>Price: ₹25/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://www.shutterstock.com/image-photo/corn-straw-texture-background-600w-393607543.jpg" alt="Maize Stalk">
+                        <h5>Maize Stalk</h5>
+                        <p>Quantity: 400 kgs</p>
+                        <p>Price: ₹12/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="parali-card">
+                        <img src="https://frankinns-hayandstraw.co.uk/wp-content/uploads/2021/11/FIs-Close-Up-Barley-Straw-6.jpg" alt="Barley Straw">
+                        <h5>Barley Straw</h5>
+                        <p>Quantity: 200 kgs</p>
+                        <p>Price: ₹9/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+    
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5b34ee7cd274cba0a204aaad/1599016868570-SPM7O62LSD4PSLLD7YKN/shutterstock_240073321.jpg" alt="Oats Straw">
+                        <h5>Oats Straw</h5>
+                        <p>Quantity: 100 kgs</p>
+                        <p>Price: ₹7/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://tiimg.tistatic.com/fp/2/007/725/pure-fresh-green-sugar-cane-16-fiber-15-soluble-sugar-73--821.jpg" alt="Sugarcane Trash">
+                        <h5>Sugarcane Trash</h5>
+                        <p>Quantity: 350 kgs</p>
+                        <p>Price: ₹11/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmY7_j7g3rnKsHIlQ_QapuE7ut4pJsWccvnKLOjQyO6ly7S-9S83nb6mBRuKvlzdz2mg&usqp=CAU" alt="Cotton Stalk">
+                        <h5>Cotton Stalk</h5>
+                        <p>Quantity: 100 kgs</p>
+                        <p>Price: ₹15/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="parali-card">
+                        <img src="https://www.smartfood.org/wp-content/uploads/2019/10/millet660.jpg" alt="Millet Stalk">
+                        <h5>Millet Stalk</h5>
+                        <p>Quantity: 250 kgs</p>
+                        <p>Price: ₹10/kg</p>
+                        <button class="btn btn-warning btn-sm">Add to Cart</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-btn" data-bs-toggle="dropdown" aria-expanded="false">
+        🛒
+    </div>
+
+    <!-- Cart Dropdown Menu -->
+    <div class="dropdown-menu dropdown-menu-end p-3">
+        <h6 class="mb-3">Cart Details</h6>
+        <p><strong>Order ID:</strong> #12345</p>
+        <p><strong>Date:</strong> 2025-01-29</p>
+        <p><strong>Amount Payable:</strong> ₹500</p>
+        <button class="btn btn-primary btn-sm w-100">Proceed to Checkout</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

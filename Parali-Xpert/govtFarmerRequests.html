@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parali Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+        }
+            .page-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+    /* Container for Centering */
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+        /* Header & Navigation Bar */
+        .navbar {
+            background-color: #004d00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* High z-index for the navbar */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-left {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #76c38f;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content */
+        .order-container {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 120px; /* Added margin-top to avoid overlap with fixed navbar */
+        }
+
+        .order {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .order h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .order p {
+            margin: 5px 0;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .status div {
+            display: flex;
+            align-items: center;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .completed { background-color: green; }
+        .current { background-color: orange; }
+        .pending { background-color: grey; }
+        
+        .details {
+            display: none;
+            margin-top: 10px;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .toggle-btn {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <div class="navbar">
+        <div class="navbar-left">
+            <a href="govtHome.html">Home</a>
+            <a href="govtBazar.html">Parali Bazar</a>
+            <a href="govtIndustries.html">Industries</a>
+            <a href="govtIndustRequests.html">Industries Requests</a>
+            <a href="govtFarmerRequests.html">Farmers Requests</a>
+        </div>
+        <a href="index.html">
+            <button type="button" class="btn btn-outline-light" style="border: 1px solid white;padding: 6px 12px;margin: 0; background-color: transparent; color: #fff;margin-right: 5px; font-size: 17px; border-radius: 2px;" >Sign Out</button>
+        </a> 
+    </div>
+
+    <div class="order-container">
+    
+        
+        <!-- Order 1 -->
+        <div class="order">
+            <h3>Order ID: 101</h3>
+            <p>Driver ID: 987623456</p>
+            <p>Collected From: Ludhiana</p>
+            <div class="status">
+                <div>
+                    <span class="circle completed"></span> Collection
+                </div>
+                <div>
+                    <span class="circle current"></span> Warehouse Arrival
+                </div>
+                <div>
+                    <span class="circle pending"></span> Payment
+                </div>
+            </div>
+            <button onclick="toggleDetails('details101')" class="toggle-btn">More</button>
+            <div id="details101" class="details">
+                <p>Collected Date: 25th Jan 2025</p>
+                <p>Warehouse Location: Chandigarh</p>
+                
+            </div>
+            <button>Make Payment</button>
+        </div>
+
+        <!-- Order 2 -->
+        <div class="order">
+            <h3>Order ID: 102</h3>
+            <p>Driver ID: 987654321</p>
+            <p>Collected From: Patiala</p>
+            <div class="status">
+                <div>
+                    <span class="circle completed"></span> Collection
+                </div>
+                <div>
+                    <span class="circle current"></span> Warehouse Arrival
+                </div>
+                <div>
+                    <span class="circle pending"></span> Payment
+                </div>
+            </div>
+            <button onclick="toggleDetails('details102')" class="toggle-btn">More</button>
+            <div id="details102" class="details">
+                <p>Collected Date: 26th Jan 2025</p>
+                <p>Warehouse Location: Amritsar</p>
+                
+            </div>
+            <button>Make Payment</button>
+        </div>
+
+        <!-- Order 3 -->
+        <div class="order">
+            <h3>Order ID: 103</h3>
+            <p>Driver ID: 1234567890</p>
+            <p>Collected From: Jalandhar</p>
+            <div class="status">
+                <div>
+                    <span class="circle completed"></span> Collection
+                </div>
+                <div>
+                    <span class="circle completed"></span> Warehouse Arrival
+                </div>
+                <div>
+                    <span class="circle current"></span> Payment
+                </div>
+            </div>
+            <button onclick="toggleDetails('details103')" class="toggle-btn">More</button>
+            <div id="details103" class="details">
+                <p>Collected Date: 27th Jan 2025</p>
+                <p>Warehouse Location: Amritsar</p>
+                
+            </div>
+            <button>Make Payment</button>
+        </div>
+
+        <!-- Order 4 -->
+        <div class="order">
+            <h3>Order ID: 104</h3>
+            <p>Driver ID: 123454327</p>
+            <p>Collected From: Mohali</p>
+            <div class="status">
+                <div>
+                    <span class="circle completed"></span> Collection
+                </div>
+                <div>
+                    <span class="circle current"></span> Warehouse Arrival
+                </div>
+                <div>
+                    <span class="circle pending"></span> Payment
+                </div>
+            </div>
+            <button onclick="toggleDetails('details104')" class="toggle-btn">More</button>
+            <div id="details104" class="details">
+                <p>Collected Date: 28th Jan 2025</p>
+                <p>Warehouse Location: Patiala</p>
+
+            </div>
+            <button>Make Payment</button>
+        </div>
+
+        <!-- Order 5 -->
+        <div class="order">
+            <h3>Order ID: 105</h3>
+            <p>Driver ID: 098765678</p>
+            <p>Collected From: Bhatinda</p>
+            <div class="status">
+                <div>
+                    <span class="circle completed"></span> Collection
+                </div>
+                <div>
+                    <span class="circle completed"></span> Warehouse Arrival
+                </div>
+                <div>
+                    <span class="circle completed"></span> Payment
+                </div>
+            </div>
+            <button onclick="toggleDetails('details105')" class="toggle-btn">More</button>
+            <div id="details105" class="details">
+                <p>Collected Date: 29th Jan 2025</p>
+                <p>Warehouse Location: Jalandhar</p>
+              
+            </div>
+            <button>Completed</button>
+        </div>
+
+    </div>
+</body>
+</html>
